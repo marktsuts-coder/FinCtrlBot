@@ -22,9 +22,15 @@ logger = logging.getLogger(__name__)
 print("=== ЗАПУСК ТЕЛЕГРАМ БОТА ===")
 
 # --- КОНФИГУРАЦИЯ ---
-BOT_TOKEN = os.getenv('BOT_TOKEN', "8429539468:AAG6IzR5Avp93_o82rTvm25oEiBRgUIi-QY")
-CHANNEL_ID = os.getenv('CHANNEL_ID', "-1003130442886")
+BOT_TOKEN = os.getenv('BOT_TOKEN')
+CHANNEL_ID = os.getenv('CHANNEL_ID')
 DATA_FILE = 'posted_links.json'
+
+# Добавьте проверку
+if not BOT_TOKEN:
+    raise ValueError("BOT_TOKEN не установлен! Добавьте его в переменные окружения")
+if not CHANNEL_ID:
+    raise ValueError("CHANNEL_ID не установлен! Добавьте его в переменные окружения")
 
 # Минимальная дата для публикации
 MIN_DATE = datetime(2025, 9, 20)
