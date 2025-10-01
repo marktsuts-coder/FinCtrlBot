@@ -1,0 +1,14 @@
+# Файлы окружения
+.env
+*.env
+
+# Файлы данных бота
+posted_links.json
+bot_data.db
+
+# Логи
+*.log
+
+# Питон
+__pycache__/
+*.pyc
